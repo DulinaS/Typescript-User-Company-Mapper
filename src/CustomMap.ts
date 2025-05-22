@@ -1,4 +1,14 @@
 //what this file does is create a new google maps object
+import { User } from "./user";
+import { Company } from "./Company";
+
+//This tells the input parameeter type of the addMarker method
+interface Mappable {
+  location: {
+    lat: number; // latitude
+    lng: number; // longitude
+  };
+}
 export class CustomMap {
   private googleMap: google.maps.Map;
 
@@ -16,4 +26,15 @@ export class CustomMap {
     });
   }
 
+  //This method will add a marker to the map
+  addMarker(obj: Mappable ): void {
+    //This will create a new google maps marker
+    new google.maps.Marker({
+      map: this.googleMap, //Attr
+      position: {
+        lat: obj.location.lat,
+        lng: obj.location.lng
+      }
+    });
+  }
 }

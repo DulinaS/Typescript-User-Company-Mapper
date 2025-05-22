@@ -1,6 +1,6 @@
 /// <reference types="@types/google.maps" />
-/* import { Company } from "./Company";
-import { User } from "./user";*/  
+import { Company } from "./Company";
+import { User } from "./user"; 
 
 import { CustomMap } from "./CustomMap";
 
@@ -12,5 +12,18 @@ console.log(user);
 console.log(company); */
 
 //This will create a customMap object
-new CustomMap('map');
+const customMap = new CustomMap('map');
+
+
+//Create a new user object
+const user = new User();
+
+//Create a new company object
+const company = new Company();
+
+//Add the user marker to the map
+customMap.addMarker(user);
+//Add the company marker to the map
+customMap.addMarker(company);
+
 
