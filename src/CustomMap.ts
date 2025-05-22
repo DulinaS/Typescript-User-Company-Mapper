@@ -29,12 +29,26 @@ export class CustomMap {
   //This method will add a marker to the map
   addMarker(obj: Mappable ): void {
     //This will create a new google maps marker
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       map: this.googleMap, //Attr
       position: {
         lat: obj.location.lat,
         lng: obj.location.lng
       }
+    });
+
+    //This will open the info window when the marker is clicked
+    marker.addListener('click', () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: `
+          <div>
+            <h1>${obj.constructor.name}</h1>
+            <p>Latitude: ${obj.location.lat}</p>
+            <p>Longitude: ${obj.location.lng}</p>
+          </div>
+        `
+      });
+      infoWindow.open(this.googleMap, marker); //infoWindow will open when the marker is clicked
     });
   }
 }
