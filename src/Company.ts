@@ -15,4 +15,5 @@ export class Company{
       lng: parseFloat(faker.address.longitude())
     }
   }
+
 }

@@ -42,13 +42,13 @@ export class CustomMap {
       const infoWindow = new google.maps.InfoWindow({
         content: `
           <div>
-            <h1>${obj.constructor.name}</h1>
-            <p>Latitude: ${obj.location.lat}</p>
-            <p>Longitude: ${obj.location.lng}</p>
+        <p>Latitude: ${obj.location.lat}</p>
+        <p>Longitude: ${obj.location.lng}</p>
           </div>
         `
       });
       infoWindow.open(this.googleMap, marker); //infoWindow will open when the marker is clicked
     });
+
   }
 }
