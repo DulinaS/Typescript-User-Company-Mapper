@@ -1,7 +1,16 @@
-import { User } from "./user";
+/// <reference types="@types/google.maps" />
+/* import { Company } from "./Company";
+import { User } from "./user";*/  
 
-//index.html points index.ts as the entry point
+import { CustomMap } from "./CustomMap";
+
+/* //index.html points index.ts as the entry point
 //This will convert User.ts to User.js
 const user = new User();
-
+const company = new Company();
 console.log(user);
+console.log(company); */
+
+//This will create a customMap object
+new CustomMap('map');
+
